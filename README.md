@@ -60,11 +60,6 @@ Sliders are `w::slider("label", &float_var, min, max, "%.0f")`.
 - Some logic ported from the X3 external
 
 
-## Warning
-
-This will get your Roblox account banned. Don't run it on your main.
-Byfron improves — features that work today might not work tomorrow.
-
 ## License
 
 Do whatever. Attribution appreciated.
