@@ -65,7 +65,16 @@ static const std::string& cclass(uintptr_t inst)
 
 std::string name_of(uintptr_t inst) {
     if (!inst) return {};
-    uintptr_t str = mem::read<uintptr_t>(inst + off::Name);
+    // New layout: Instance -> NameContainer (ptr) -> +Name = std::string (inline)
+    // Old layout: Instance -> +Name (ptr) -> std::string
+    uintptr_t str = 0;
+    if (off::NameContainer) {
+        uintptr_t container = mem::read<uintptr_t>(inst + off::NameContainer);
+        if (!container) return {};
+        str = container + off::Name;
+    } else {
+        str = mem::read<uintptr_t>(inst + off::Name);
+    }
     if (!str) return {};
     return mem::read_lenstr(str);
 }
