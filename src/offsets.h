@@ -13,6 +13,7 @@ namespace off {
     inline uintptr_t FakeToReal       = 0;
 
     inline uintptr_t Name         = 0;
+    inline uintptr_t NameContainer = 0;
     inline uintptr_t Parent       = 0;
     inline uintptr_t Children     = 0;
     inline uintptr_t ChildrenEnd  = 0;
