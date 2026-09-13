@@ -78,6 +78,7 @@ void bind()
     FakeToReal       = get("FakeDataModelToDataModel");
 
     Name         = get("Name");
+    NameContainer = get("NameContainer");
     Parent       = get("Parent");
     Children     = get("Children");
     ChildrenEnd  = get("ChildrenEnd");
